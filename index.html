@@ -1,10 +1,143 @@
 <!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>Test File</title>
-</head>
-<body>
-This is a test file! If you can see this, your index.html is working!
-</body>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SchulS gegen Rechts – Deutschland</title>
+    <style>
+      :root {
+        --lila: #c8a2c8;
+        --blau: #4a6fa5;
+        --regenbogen-rot: #ff6b6b;
+        --regenbogen-orange: #ffa500;
+        --regenbogen-gelb: #ffe66d;
+        --regenbogen-gruen: #4caf50;
+        --regenbogen-blau: #2196f3;
+        --regenbogen-lila: #9c27b0;
+        --text-dunkel: #2d3748;
+        --text-hell: #ffffff;
+      }
+
+      body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(135deg, var(--lila), var(--regenbogen-lila));
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-dunkel);
+        text-align: center;
+        padding: 1rem;
+      }
+
+      .regenbogen-balken {
+        width: 100%;
+        height: 10px;
+        background: linear-gradient(
+          90deg,
+          var(--regenbogen-rot),
+          var(--regenbogen-orange),
+          var(--regenbogen-gelb),
+          var(--regenbogen-gruen),
+          var(--regenbogen-blau),
+          var(--regenbogen-lila)
+        );
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .logo-image {
+        width: 300px;
+        height: 300px;
+        margin: 1rem auto;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid var(--blau);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      }
+
+      .termin {
+        font-size: 2rem;
+        font-weight: bold;
+        color: var(--text-hell);
+        background: var(--blau);
+        padding: 1.5rem 2rem;
+        border-radius: 10px;
+        margin: 2rem 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .kontakt {
+        margin-top: 1rem;
+        background: rgba(255, 255, 255, 0.3);
+        padding: 1.5rem;
+        border-radius: 10px;
+        width: 100%;
+        max-width: 500px;
+      }
+
+      .kontakt a {
+        color: var(--blau);
+        text-decoration: none;
+        font-weight: bold;
+        display: block;
+        margin: 0.5rem 0;
+        font-size: 1.1rem;
+      }
+
+      .kontakt a:hover {
+        text-decoration: underline;
+      }
+
+      @media (max-width: 600px) {
+        .logo-image {
+          width: 200px;
+          height: 200px;
+        }
+        .termin {
+          font-size: 1.5rem;
+          padding: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="regenbogen-balken"></div>
+    
+    <div class="container">
+      <img
+        src="logo.png"
+        alt="SchulS gegen Rechts Deutschland Logo"
+        class="logo-image"
+      />
+      
+      <div class="termin">
+        NÄCHSTER TERMIN: <br />
+        <span id="termin-datum">20. September 2026 – 15:00 Uhr</span>
+      </div>
+
+      <div class="kontakt">
+        <a href="https://www.instagram.com/schulsgegenrechts/" target="_blank">📷 Instagram</a>
+        <a href="mailto:kontakt@schuls-gegen-rechts.de">✉️ kontakt@schuls-gegen-rechts.de</a>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById('termin-datum').textContent = '20. September 2026 – 15:00 Uhr';
+    </script>
+  </body>
 </html>
